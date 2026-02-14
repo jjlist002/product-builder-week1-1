@@ -2,20 +2,20 @@
     --bg-color: #f0f0f0;
     --text-color: #333;
     --container-bg: #fff;
-    --number-bg: #fff;
     --number-border: #ccc;
     --btn-bg: #333;
     --btn-color: #fff;
+    --row-divider: #e0e0e0;
 }
 
 [data-theme="dark"] {
     --bg-color: #1a1a2e;
     --text-color: #e0e0e0;
     --container-bg: #16213e;
-    --number-bg: #0f3460;
     --number-border: #533483;
     --btn-bg: #e94560;
     --btn-color: #fff;
+    --row-divider: #2a2a4a;
 }
 
 body {
@@ -60,30 +60,55 @@ body {
     transition: background-color 0.3s;
 }
 
-.lotto-numbers {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+.lotto-rows {
     margin: 20px 0;
 }
 
-.number {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: var(--number-bg);
-    border: 2px solid var(--number-border);
+.lotto-row {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: var(--text-color);
-    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    gap: 10px;
+    padding: 10px 0;
 }
 
+.lotto-row + .lotto-row {
+    border-top: 1px solid var(--row-divider);
+}
+
+.row-label {
+    font-size: 0.85em;
+    font-weight: bold;
+    color: var(--text-color);
+    opacity: 0.6;
+    min-width: 20px;
+}
+
+.number {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #fff;
+    transition: transform 0.2s;
+}
+
+.number:hover {
+    transform: scale(1.15);
+}
+
+.number.range-1  { background-color: #fbc400; }
+.number.range-10 { background-color: #69c8f2; }
+.number.range-20 { background-color: #ff7272; }
+.number.range-30 { background-color: #aaa; }
+.number.range-40 { background-color: #b0d840; }
+
 #generate-btn {
-    padding: 10px 20px;
+    padding: 12px 28px;
     font-size: 1em;
     cursor: pointer;
     background-color: var(--btn-bg);
