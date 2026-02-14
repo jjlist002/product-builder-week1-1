@@ -1,14 +1,63 @@
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #333;
+    --container-bg: #fff;
+    --number-bg: #fff;
+    --number-border: #ccc;
+    --btn-bg: #333;
+    --btn-color: #fff;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a2e;
+    --text-color: #e0e0e0;
+    --container-bg: #16213e;
+    --number-bg: #0f3460;
+    --number-border: #533483;
+    --btn-bg: #e94560;
+    --btn-color: #fff;
+}
+
 body {
     font-family: sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid var(--number-border);
+    background-color: var(--container-bg);
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.theme-toggle:hover {
+    opacity: 0.8;
 }
 
 .container {
     text-align: center;
+    background-color: var(--container-bg);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s;
 }
 
 .lotto-numbers {
@@ -22,16 +71,28 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: var(--number-bg);
+    border: 2px solid var(--number-border);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2em;
+    font-weight: bold;
+    color: var(--text-color);
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 }
 
 #generate-btn {
     padding: 10px 20px;
     font-size: 1em;
     cursor: pointer;
+    background-color: var(--btn-bg);
+    color: var(--btn-color);
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+#generate-btn:hover {
+    opacity: 0.9;
 }
