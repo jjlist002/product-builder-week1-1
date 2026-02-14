@@ -1,24 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-6278260303538911">
-    <title>Lotto Number Generator</title>
+    <meta name="description" content="무료 로또 번호 생성기 - 랜덤 알고리즘으로 행운의 로또 6/45 번호를 추천받으세요. 번호 범위별 색상 구분, 당첨 확률 정보까지 제공합니다.">
+    <meta name="keywords" content="로또, 로또 번호 생성기, 로또 번호 추천, 로또 6/45, 무료 로또, 랜덤 번호">
+    <meta property="og:title" content="로또 번호 생성기 - 행운의 번호를 만나보세요">
+    <meta property="og:description" content="무료 로또 번호 생성기로 매주 행운의 번호를 추천받으세요. 번호 범위별 색상 구분과 당첨 확률 정보를 제공합니다.">
+    <meta property="og:type" content="website">
+    <title>로또 번호 생성기 - 무료 랜덤 번호 추천 | LottoGen</title>
     <link rel="stylesheet" href="style.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6278260303538911"
          crossorigin="anonymous"></script>
 </head>
 <body>
-    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="site-logo">LottoGen</a>
+            <button type="button" class="menu-toggle" id="menu-toggle" aria-label="메뉴 열기">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="site-nav">
+                <a href="#generator">번호 생성</a>
+                <a href="#how-to-use">사용법</a>
+                <a href="#lotto-info">로또 정보</a>
+                <a href="#faq">FAQ</a>
+                <a href="about.html">소개</a>
+                <a href="privacy.html">개인정보처리방침</a>
+            </nav>
+        </div>
+    </header>
+
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="다크모드 전환">🌙</button>
+
     <main class="page-wrap">
-        <div class="container">
-            <h1>Lotto Number Generator</h1>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1>행운의 로또 번호를<br>지금 바로 만나보세요</h1>
+            <p class="hero-desc">매주 새로운 행운! 랜덤 알고리즘 기반 로또 6/45 번호 생성기로 나만의 행운 번호를 추천받으세요. 한 번의 클릭으로 5세트의 번호를 무료로 생성할 수 있습니다.</p>
+            <a href="#generator" class="hero-cta">번호 생성하러 가기</a>
+        </section>
+
+        <!-- Generator Section -->
+        <div class="container" id="generator">
+            <h2>로또 번호 생성기</h2>
+            <p class="section-desc">버튼을 누르면 1~45 중 무작위 6개 번호가 5세트 생성됩니다.</p>
             <div class="lotto-rows" id="lotto-rows"></div>
-            <button type="button" id="generate-btn">Generate Numbers</button>
+            <button type="button" id="generate-btn">번호 생성하기</button>
         </div>
 
-        <div class="container contact-form">
+        <!-- How to Use Section -->
+        <section class="container content-section" id="how-to-use">
+            <h2>사용 방법</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>번호 생성 클릭</h3>
+                    <p>"번호 생성하기" 버튼을 클릭하면 랜덤 알고리즘이 1부터 45까지의 숫자 중 6개를 무작위로 선택합니다.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>5세트 확인</h3>
+                    <p>한 번에 A~E까지 5세트의 번호가 생성됩니다. 각 번호는 범위에 따라 다른 색상으로 표시되어 한눈에 구분할 수 있습니다.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>마음에 드는 번호 선택</h3>
+                    <p>생성된 5세트 중 마음에 드는 번호 조합을 선택하세요. 원하는 만큼 다시 생성할 수 있습니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lotto Info Section -->
+        <section class="container content-section" id="lotto-info">
+            <h2>로또 6/45 알아보기</h2>
+
+            <div class="info-block">
+                <h3>번호 범위별 색상 구분</h3>
+                <p>로또 6/45의 번호는 범위에 따라 고유한 색상이 지정되어 있습니다. 본 생성기에서도 동일한 색상 체계를 사용합니다.</p>
+                <div class="color-guide">
+                    <div class="color-item"><span class="color-dot range-1"></span> 1~9번: 노란색</div>
+                    <div class="color-item"><span class="color-dot range-10"></span> 10~19번: 파란색</div>
+                    <div class="color-item"><span class="color-dot range-20"></span> 20~29번: 빨간색</div>
+                    <div class="color-item"><span class="color-dot range-30"></span> 30~39번: 회색</div>
+                    <div class="color-item"><span class="color-dot range-40"></span> 40~45번: 초록색</div>
+                </div>
+            </div>
+
+            <div class="info-block">
+                <h3>당첨 확률 안내</h3>
+                <p>로또 6/45의 당첨 확률을 이해하면 보다 현실적으로 로또를 즐길 수 있습니다.</p>
+                <table class="info-table">
+                    <thead>
+                        <tr><th>등수</th><th>조건</th><th>확률</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1등</td><td>6개 번호 일치</td><td>1 / 8,145,060</td></tr>
+                        <tr><td>2등</td><td>5개 + 보너스 번호</td><td>1 / 1,357,510</td></tr>
+                        <tr><td>3등</td><td>5개 번호 일치</td><td>1 / 35,724</td></tr>
+                        <tr><td>4등</td><td>4개 번호 일치</td><td>1 / 733</td></tr>
+                        <tr><td>5등</td><td>3개 번호 일치</td><td>1 / 45</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-block">
+                <h3>로또 번호 선택 팁</h3>
+                <ul class="tips-list">
+                    <li><strong>골고루 분포시키기:</strong> 1~45 전 범위에서 고르게 번호를 선택하면 다양한 조합을 커버할 수 있습니다. 한쪽 범위에 치우치지 않는 것이 좋습니다.</li>
+                    <li><strong>연속 번호 조합 활용:</strong> 실제 당첨 번호에는 연속된 번호(예: 12, 13)가 포함되는 경우가 자주 있습니다. 연속 번호를 1~2쌍 포함하는 것도 방법입니다.</li>
+                    <li><strong>홀짝 비율 고려:</strong> 역대 당첨 번호를 분석하면 홀수와 짝수가 3:3 또는 4:2 비율로 나오는 경우가 가장 많습니다.</li>
+                    <li><strong>고저 비율 확인:</strong> 1~22(저번호)와 23~45(고번호)의 비율이 균형 잡힌 조합이 통계적으로 자주 등장합니다.</li>
+                    <li><strong>랜덤 생성기 활용:</strong> 사람은 무의식적으로 특정 패턴의 번호를 고르게 됩니다. 랜덤 생성기를 활용하면 편향 없이 다양한 조합을 시도할 수 있습니다.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="container content-section" id="faq">
+            <h2>자주 묻는 질문 (FAQ)</h2>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>이 생성기는 무료인가요?</summary>
+                    <p>네, 완전히 무료입니다. 회원가입이나 로그인 없이 누구나 자유롭게 사용할 수 있습니다. 횟수 제한도 없으니 원하는 만큼 번호를 생성하세요.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>생성된 번호로 당첨될 확률이 높아지나요?</summary>
+                    <p>로또는 완전한 랜덤 추첨이므로, 어떤 번호 조합이든 당첨 확률은 동일합니다. 본 생성기는 편향 없는 랜덤 알고리즘을 사용하여 공정한 번호를 생성하지만, 당첨을 보장하지는 않습니다.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>번호는 어떤 방식으로 생성되나요?</summary>
+                    <p>JavaScript의 Math.random() 함수를 기반으로 1~45 범위에서 중복 없이 6개의 숫자를 무작위로 선택합니다. 매번 새로운 조합이 생성되며, 이전 결과와 무관하게 독립적으로 작동합니다.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>모바일에서도 사용할 수 있나요?</summary>
+                    <p>네, 반응형 웹 디자인으로 제작되어 스마트폰, 태블릿, PC 등 모든 기기에서 편리하게 사용할 수 있습니다.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>개인정보를 수집하나요?</summary>
+                    <p>번호 생성 기능은 개인정보를 일절 수집하지 않습니다. 모든 처리는 사용자의 브라우저에서 이루어집니다. 자세한 내용은 <a href="privacy.html">개인정보처리방침</a>을 참고해 주세요.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>다크모드를 지원하나요?</summary>
+                    <p>네, 화면 우측 상단의 달/해 아이콘을 클릭하면 다크모드와 라이트모드를 전환할 수 있습니다. 설정은 브라우저에 저장되어 다음 방문 시에도 유지됩니다.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <div class="container contact-form" id="contact">
             <h2>제휴 문의</h2>
             <p class="form-desc">제휴 및 협업 관련 문의를 남겨주세요.</p>
             <form id="contact-form" action="https://formspree.io/f/mzdarzzo" method="POST">
@@ -39,8 +171,9 @@
             <p class="form-status" id="form-status"></p>
         </div>
 
-        <div class="container comments-section">
-            <h2>Comments</h2>
+        <!-- Comments -->
+        <div class="container comments-section" id="comments">
+            <h2>댓글</h2>
             <div id="disqus_thread"></div>
             <script>
                 var disqus_config = function () {
@@ -54,9 +187,24 @@
                     (d.head || d.body).appendChild(s);
                 })();
             </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <noscript>댓글을 보려면 JavaScript를 활성화해 주세요. <a href="https://disqus.com/?ref_noscript">Disqus 제공</a></noscript>
         </div>
     </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="index.html">홈</a>
+                <a href="about.html">소개</a>
+                <a href="privacy.html">개인정보처리방침</a>
+                <a href="#contact">문의</a>
+            </div>
+            <p class="footer-disclaimer">본 사이트는 로또 번호를 무작위로 생성하는 도구이며, 당첨을 보장하지 않습니다. 로또 구매는 개인의 판단과 책임 하에 이루어져야 합니다.</p>
+            <p class="footer-copyright">&copy; 2025 LottoGen. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="main.js"></script>
 </body>
 </html>

@@ -1,8 +1,36 @@
-const lottoRowsContainer = document.getElementById('lotto-rows');
-const generateBtn = document.getElementById('generate-btn');
-const themeToggle = document.getElementById('theme-toggle');
+// Mobile menu toggle
+const menuToggle = document.getElementById('menu-toggle');
+const siteNav = document.getElementById('site-nav');
+
+menuToggle.addEventListener('click', () => {
+    siteNav.classList.toggle('open');
+});
+
+// Close mobile menu when a nav link is clicked
+siteNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        siteNav.classList.remove('open');
+    });
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+        const targetId = anchor.getAttribute('href');
+        if (targetId === '#') return;
+        const target = document.querySelector(targetId);
+        if (target) {
+            e.preventDefault();
+            const headerOffset = 70;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - headerOffset;
+            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        }
+    });
+});
 
 // Theme toggle
+const themeToggle = document.getElementById('theme-toggle');
 const savedTheme = localStorage.getItem('theme') || 'light';
 if (savedTheme === 'dark') {
     document.documentElement.setAttribute('data-theme', 'dark');
@@ -23,6 +51,9 @@ themeToggle.addEventListener('click', () => {
 });
 
 // Lotto number generator
+const lottoRowsContainer = document.getElementById('lotto-rows');
+const generateBtn = document.getElementById('generate-btn');
+
 function generateNumbers() {
     const numbers = new Set();
     while (numbers.size < 6) {
@@ -61,33 +92,37 @@ function displayAllRows() {
     }
 }
 
-generateBtn.addEventListener('click', displayAllRows);
+if (generateBtn) {
+    generateBtn.addEventListener('click', displayAllRows);
+}
 
 // Contact form submission
 const contactForm = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
 
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    formStatus.textContent = '전송 중...';
-    formStatus.className = 'form-status';
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        formStatus.textContent = '전송 중...';
+        formStatus.className = 'form-status';
 
-    try {
-        const res = await fetch(contactForm.action, {
-            method: 'POST',
-            body: new FormData(contactForm),
-            headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-            formStatus.textContent = '문의가 성공적으로 전송되었습니다!';
-            formStatus.classList.add('success');
-            contactForm.reset();
-        } else {
-            formStatus.textContent = '전송에 실패했습니다. 다시 시도해주세요.';
+        try {
+            const res = await fetch(contactForm.action, {
+                method: 'POST',
+                body: new FormData(contactForm),
+                headers: { 'Accept': 'application/json' }
+            });
+            if (res.ok) {
+                formStatus.textContent = '문의가 성공적으로 전송되었습니다!';
+                formStatus.classList.add('success');
+                contactForm.reset();
+            } else {
+                formStatus.textContent = '전송에 실패했습니다. 다시 시도해주세요.';
+                formStatus.classList.add('error');
+            }
+        } catch {
+            formStatus.textContent = '네트워크 오류가 발생했습니다.';
             formStatus.classList.add('error');
         }
-    } catch {
-        formStatus.textContent = '네트워크 오류가 발생했습니다.';
-        formStatus.classList.add('error');
-    }
-});
+    });
+}
