@@ -216,3 +216,13 @@ body {
 .form-status.error {
     color: #e94560;
 }
+
+/* Comments Section */
+.comments-section h2 {
+    margin: 0 0 20px;
+    font-size: 1.4em;
+}
+
+.comments-section #disqus_thread {
+    text-align: left;
+}

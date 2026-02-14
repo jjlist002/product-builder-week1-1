@@ -35,6 +35,24 @@
             </form>
             <p class="form-status" id="form-status"></p>
         </div>
+
+        <div class="container comments-section">
+            <h2>Comments</h2>
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = window.location.href;
+                    this.page.identifier = 'lotto-number-generator';
+                };
+                (function() {
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://productbuilder-zdd729chwr.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
     </main>
     <script src="main.js"></script>
 </body>
